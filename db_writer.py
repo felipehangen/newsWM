@@ -1,11 +1,13 @@
 #db_writer.py
 
 import json
+import os
+
 from dotenv import load_dotenv
 from supabase import create_client, Client
 from datetime import datetime
 
-import os
+
 
 load_dotenv()
 
