@@ -1,45 +1,48 @@
-#db_writer.py
-
-import json
 import os
-
 from dotenv import load_dotenv
-from supabase import create_client, Client
-from datetime import datetime
+from supabase import create_client
+from postgrest.exceptions import APIError
 
-
-
+# Load environment variables from .env
 load_dotenv()
 
-# 🔑 Supabase config
-SUPABASE_URL = "https://ezastdzwipwvtebvwrhx.supabase.co"
+# Initialize Supabase client
+SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-def save_article_to_supabase(article):
-    # Convert timestamp to UTC ISO format if it's not already
+def save_article_to_supabase(article: dict):
+    """
+    Inserts an article into Supabase only if its URL isn't already present.
+    """
+    # Basic URL check
+    url = article.get("url")
+    if not url:
+        print("❌ Missing URL—skipping article.")
+        return
+
+    # 1) Duplicate check
     try:
-        dt = datetime.fromisoformat(article["timestamp"])
-        article["timestamp"] = dt.astimezone().isoformat()
-    except Exception as e:
-        print(f"⚠️ Failed to convert timestamp to UTC: {e}")
+        resp = (
+            supabase
+            .table("articles")
+            .select("url")
+            .eq("url", url)
+            .limit(1)
+            .execute()
+        )
+    except APIError as e:
+        print(f"❌ Duplicate-check error: {e}")
+        return
 
-    # Remove hashtags from tags
-    article["tags"] = [tag.replace("#", "").strip() for tag in article.get("tags", []) if tag.strip()]
+    if resp.data:
+        print(f"⚠️ Duplicate found—skipping URL: {url}")
+        return
 
+    # 2) Insert new article
     try:
-        json.dumps(article)
-        print("📦 Inserting article to Supabase...")
-        response = supabase.table("Articles").insert(article).execute()
-
-        if hasattr(response, 'data'):
-            print("✅ Inserted successfully!")
-        else:
-            print(f"❌ Insert failed! Full response: {response}")
-
-    except Exception as e:
-        if hasattr(e, 'message'):
-            print(f"❌ Error inserting article: {e.message}")
-        else:
-            print(f"❌ Error inserting article: {e}")
+        supabase.table("articles").insert(article).execute()
+        print(f"✅ Inserted article: {url}")
+    except APIError as e:
+        print(f"❌ Insert error: {e}")
