@@ -1,3 +1,15 @@
-/.venv
+# Byte-code
+__pycache__/
+*.py[cod]
+
+# Virtual env
+.venv/
+
+# Local secrets
 .env
+
+# VSCode settings
+.vscode/
+
+# backup files
 OLD/
