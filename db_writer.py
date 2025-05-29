@@ -1,48 +1,53 @@
+# db_writer.py
+
 import os
 from dotenv import load_dotenv
-from supabase import create_client
-from postgrest.exceptions import APIError
+from supabase import create_client, Client
+from typing import Dict, Any
 
-# Load environment variables from .env
-load_dotenv()
+# 1) Load .env
+load_dotenv()  # looks for a file named ".env" in the current working dir
 
-# Initialize Supabase client
+# 2) Read in your Supabase credentials
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.getenv("SUPABASE_KEY")
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 
-def save_article_to_supabase(article: dict):
+# 3) Validate
+if not SUPABASE_URL or not SUPABASE_KEY:
+    raise RuntimeError(
+        "Missing Supabase credentials. "
+        "Please create a .env file with SUPABASE_URL and SUPABASE_KEY."
+    )
+
+# 4) Create the client
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+def save_article_to_supabase(article: Dict[str, Any]) -> None:
     """
-    Inserts an article into Supabase only if its URL isn't already present.
+    Inserts an article into Supabase, skipping it if the URL already exists.
+    Expects `article` to be a flat dict matching your Supabase table schema.
     """
-    # Basic URL check
-    url = article.get("url")
-    if not url:
-        print("❌ Missing URL—skipping article.")
+    # 4.1) Check for duplicate URL
+    existing = (
+        supabase
+        .table("articles")
+        .select("id")
+        .eq("url", article["url"])
+        .maybe_single()
+        .execute()
+    )
+    if existing.error:
+        print(f"❌ Error checking duplicates: {existing.error}")
         return
 
-    # 1) Duplicate check
-    try:
-        resp = (
-            supabase
-            .table("articles")
-            .select("url")
-            .eq("url", url)
-            .limit(1)
-            .execute()
-        )
-    except APIError as e:
-        print(f"❌ Duplicate-check error: {e}")
+    if existing.data is not None:
+        print(f"🔁 Skipping duplicate: {article['url']}")
         return
 
-    if resp.data:
-        print(f"⚠️ Duplicate found—skipping URL: {url}")
-        return
-
-    # 2) Insert new article
-    try:
-        supabase.table("articles").insert(article).execute()
-        print(f"✅ Inserted article: {url}")
-    except APIError as e:
-        print(f"❌ Insert error: {e}")
+    # 4.2) Insert new record
+    result = supabase.table("articles").insert(article).execute()
+    if result.error:
+        print(f"❌ Error inserting article: {result.error}")
+    else:
+        print(f"✅ Saved: {article['url']}")
