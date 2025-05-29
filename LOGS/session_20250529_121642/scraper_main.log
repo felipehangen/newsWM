@@ -1,0 +1,80 @@
+2025-05-29 12:16:42,229 - INFO - 🚀 ROBUST CRHOY SCRAPER STARTED
+2025-05-29 12:16:42,229 - INFO - 📁 Session Directory: LOGS/session_20250529_121642
+2025-05-29 12:16:42,229 - INFO - 📅 Date(s): 2024-05-06 to 2024-05-07
+2025-05-29 12:16:42,229 - INFO - 🎯 Limit per day: 3
+2025-05-29 12:16:42,299 - INFO - Successfully connected to Supabase
+2025-05-29 12:16:42,299 - INFO - ✅ Database connection established
+2025-05-29 12:16:42,299 - INFO - 🎯 Mode: Date Range Scraping (2 days)
+2025-05-29 12:16:42,299 - INFO - 📅 Processing day 1/2: 2024-05-06
+2025-05-29 12:16:43,220 - INFO - Chrome driver initialized successfully
+2025-05-29 12:16:43,519 - INFO - Found 88 URLs for 2024-05-06
+2025-05-29 12:16:43,519 - INFO - Limiting to first 3
+2025-05-29 12:16:43,519 - INFO - Processing 1/3: https://www.crhoy.com/nacionales/video-buscan-a-sospechoso-de-estafa-informatica/ 
+2025-05-29 12:17:12,979 - INFO - Successfully scraped: Video: Buscan a sospechoso de sustraer dinero tras...
+2025-05-29 12:17:16,791 - INFO - Processing 2/3: https://www.crhoy.com/nacionales/aspirante-a-policia-muere-tras-paro-cardiaco-durante-pruebas-fisicas/ 
+2025-05-29 12:17:44,181 - INFO - Successfully scraped: Aspirante a policía muere tras paro cardíaco duran...
+2025-05-29 12:17:48,279 - INFO - Processing 3/3: https://www.crhoy.com/nacionales/video-muestra-camion-que-se-incendio-en-atenas/ 
+2025-05-29 12:18:34,040 - INFO - Successfully scraped: Video muestra camión que se incendió en Atenas...
+2025-05-29 12:18:37,805 - INFO - Successfully scraped 3 articles for 2024-05-06
+2025-05-29 12:18:37,915 - INFO - ✅ Scraped 3 articles from 2024-05-06
+2025-05-29 12:18:37,915 - INFO - Starting batch save of 3 articles
+2025-05-29 12:18:37,915 - INFO - Processing article 1/3: Video: Buscan a sospechoso de sustraer dinero tras...
+2025-05-29 12:18:38,377 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fnacionales%2Fvideo-buscan-a-sospechoso-de-estafa-informatica%2F+ "HTTP/2 200 OK"
+2025-05-29 12:18:38,638 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fnacionales%2Fvideo-buscan-a-sospechoso-de-estafa-informatica%2F+ "HTTP/2 200 OK"
+2025-05-29 12:18:38,811 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=0 "HTTP/2 200 OK"
+2025-05-29 12:18:38,992 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-05-29 12:18:39,193 - INFO - HTTP Request: POST https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles "HTTP/2 201 Created"
+2025-05-29 12:18:39,194 - INFO - Successfully saved article: Video: Buscan a sospechoso de sustraer dinero tras...
+2025-05-29 12:18:39,195 - INFO - Processing article 2/3: Aspirante a policía muere tras paro cardíaco duran...
+2025-05-29 12:18:39,368 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fnacionales%2Faspirante-a-policia-muere-tras-paro-cardiaco-durante-pruebas-fisicas%2F+ "HTTP/2 200 OK"
+2025-05-29 12:18:39,488 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fnacionales%2Faspirante-a-policia-muere-tras-paro-cardiaco-durante-pruebas-fisicas%2F+ "HTTP/2 200 OK"
+2025-05-29 12:18:39,644 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=0 "HTTP/2 200 OK"
+2025-05-29 12:18:39,764 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-05-29 12:18:39,946 - INFO - HTTP Request: POST https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles "HTTP/2 201 Created"
+2025-05-29 12:18:39,947 - INFO - Successfully saved article: Aspirante a policía muere tras paro cardíaco duran...
+2025-05-29 12:18:39,947 - INFO - Processing article 3/3: Video muestra camión que se incendió en Atenas...
+2025-05-29 12:18:40,070 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fnacionales%2Fvideo-muestra-camion-que-se-incendio-en-atenas%2F+ "HTTP/2 200 OK"
+2025-05-29 12:18:40,253 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fnacionales%2Fvideo-muestra-camion-que-se-incendio-en-atenas%2F+ "HTTP/2 200 OK"
+2025-05-29 12:18:40,463 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=0 "HTTP/2 200 OK"
+2025-05-29 12:18:40,697 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-05-29 12:18:40,872 - INFO - HTTP Request: POST https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles "HTTP/2 201 Created"
+2025-05-29 12:18:40,873 - INFO - Successfully saved article: Video muestra camión que se incendió en Atenas...
+2025-05-29 12:18:40,873 - INFO - Batch save complete: {'success': 3, 'failed': 0, 'duplicates': 0, 'invalid': 0}
+2025-05-29 12:18:40,873 - INFO - 💾 Database Results: Saved=3, Failed=0, Duplicates=0
+2025-05-29 12:18:42,878 - INFO - 📅 Processing day 2/2: 2024-05-07
+2025-05-29 12:18:43,400 - INFO - Chrome driver initialized successfully
+2025-05-29 12:18:43,684 - INFO - Found 90 URLs for 2024-05-07
+2025-05-29 12:18:43,684 - INFO - Limiting to first 3
+2025-05-29 12:18:43,684 - INFO - Processing 1/3: https://www.crhoy.com/mundo/el-fenomeno-el-nino-continuo-debilitandose-en-abril/ 
+2025-05-29 12:19:11,199 - INFO - Successfully scraped: El fenómeno El Niño “continuó debilitándose” en ab...
+2025-05-29 12:19:15,219 - INFO - Processing 2/3: https://www.crhoy.com/deportes/liberia-gana-a-grecia-y-se-mantiene-en-la-lucha-por-clasificar/ 
+2025-05-29 12:19:43,052 - INFO - Successfully scraped: Liberia gana a Grecia y se mantiene en la lucha po...
+2025-05-29 12:19:46,995 - INFO - Processing 3/3: https://www.crhoy.com/deportes/un-saprissa-de-100-goleada-deja-al-monstruo-a-punto-de-blindar-el-liderato/ 
+2025-05-29 12:20:15,123 - INFO - Successfully scraped: Un Saprissa de 100: Goleada deja al Monstruo a pun...
+2025-05-29 12:20:18,287 - INFO - Successfully scraped 3 articles for 2024-05-07
+2025-05-29 12:20:18,408 - INFO - ✅ Scraped 3 articles from 2024-05-07
+2025-05-29 12:20:18,408 - INFO - Starting batch save of 3 articles
+2025-05-29 12:20:18,408 - INFO - Processing article 1/3: El fenómeno El Niño “continuó debilitándose” en ab...
+2025-05-29 12:20:18,760 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fmundo%2Fel-fenomeno-el-nino-continuo-debilitandose-en-abril%2F+ "HTTP/2 200 OK"
+2025-05-29 12:20:18,941 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fmundo%2Fel-fenomeno-el-nino-continuo-debilitandose-en-abril%2F+ "HTTP/2 200 OK"
+2025-05-29 12:20:19,129 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=0 "HTTP/2 200 OK"
+2025-05-29 12:20:19,339 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-05-29 12:20:19,472 - INFO - HTTP Request: POST https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles "HTTP/2 201 Created"
+2025-05-29 12:20:19,474 - INFO - Successfully saved article: El fenómeno El Niño “continuó debilitándose” en ab...
+2025-05-29 12:20:19,474 - INFO - Processing article 2/3: Liberia gana a Grecia y se mantiene en la lucha po...
+2025-05-29 12:20:19,655 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fdeportes%2Fliberia-gana-a-grecia-y-se-mantiene-en-la-lucha-por-clasificar%2F+ "HTTP/2 200 OK"
+2025-05-29 12:20:19,850 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fdeportes%2Fliberia-gana-a-grecia-y-se-mantiene-en-la-lucha-por-clasificar%2F+ "HTTP/2 200 OK"
+2025-05-29 12:20:20,037 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=0 "HTTP/2 200 OK"
+2025-05-29 12:20:20,227 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-05-29 12:20:20,380 - INFO - HTTP Request: POST https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles "HTTP/2 201 Created"
+2025-05-29 12:20:20,381 - INFO - Successfully saved article: Liberia gana a Grecia y se mantiene en la lucha po...
+2025-05-29 12:20:20,381 - INFO - Processing article 3/3: Un Saprissa de 100: Goleada deja al Monstruo a pun...
+2025-05-29 12:20:20,559 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fdeportes%2Fun-saprissa-de-100-goleada-deja-al-monstruo-a-punto-de-blindar-el-liderato%2F+ "HTTP/2 200 OK"
+2025-05-29 12:20:20,695 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=id&url=eq.https%3A%2F%2Fwww.crhoy.com%2Fdeportes%2Fun-saprissa-de-100-goleada-deja-al-monstruo-a-punto-de-blindar-el-liderato%2F+ "HTTP/2 200 OK"
+2025-05-29 12:20:20,879 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=0 "HTTP/2 200 OK"
+2025-05-29 12:20:21,061 - INFO - HTTP Request: GET https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles?select=%2A&limit=1 "HTTP/2 200 OK"
+2025-05-29 12:20:21,242 - INFO - HTTP Request: POST https://ezastdzwipwvtebvwrhx.supabase.co/rest/v1/articles "HTTP/2 201 Created"
+2025-05-29 12:20:21,242 - INFO - Successfully saved article: Un Saprissa de 100: Goleada deja al Monstruo a pun...
+2025-05-29 12:20:21,242 - INFO - Batch save complete: {'success': 3, 'failed': 0, 'duplicates': 0, 'invalid': 0}
+2025-05-29 12:20:21,242 - INFO - 💾 Database Results: Saved=3, Failed=0, Duplicates=0
+2025-05-29 12:20:21,242 - INFO - ✅ Scraping completed successfully

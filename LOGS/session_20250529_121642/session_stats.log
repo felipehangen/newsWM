@@ -1,0 +1,53 @@
+2025-05-29 12:16:42,229 - ================================================================================
+2025-05-29 12:16:42,229 - SESSION CONFIGURATION
+2025-05-29 12:16:42,229 - ================================================================================
+2025-05-29 12:16:42,229 - Target Date(s): 2024-05-06 to 2024-05-07
+2025-05-29 12:16:42,229 - Articles per Day: 3
+2025-05-29 12:16:42,229 - Session ID: session_20250529_121642
+2025-05-29 12:16:42,229 - ================================================================================
+2025-05-29 12:16:42,299 - ✅ Database connection established successfully
+2025-05-29 12:16:42,299 - 🎯 Mode: Date Range Scraping
+2025-05-29 12:16:42,299 - 📅 Date Range: 2024-05-06 to 2024-05-07 (2 days)
+2025-05-29 12:16:42,299 - 📅 Processing day 1/2: 2024-05-06
+2025-05-29 12:18:37,915 - ✅ Found and scraped 3 articles from 2024-05-06
+2025-05-29 12:18:40,874 - 💾 Database Results for 2024-05-06: Saved=3, Failed=0, Duplicates=0
+2025-05-29 12:18:42,878 - 📅 Processing day 2/2: 2024-05-07
+2025-05-29 12:20:18,408 - ✅ Found and scraped 3 articles from 2024-05-07
+2025-05-29 12:20:21,242 - 💾 Database Results for 2024-05-07: Saved=3, Failed=0, Duplicates=0
+2025-05-29 12:20:21,242 - ✅ Scraping session completed successfully
+2025-05-29 12:20:21,243 - 
+================================================================================
+SCRAPING SESSION SUMMARY
+================================================================================
+Session Duration: 0:03:39.013800
+Session Start: 2025-05-29 12:16:42
+Session End: 2025-05-29 12:20:21
+
+DATES PROCESSED:
+  • Dates Attempted: 2
+  • Dates Successful: 2
+  • Dates Failed: 0
+  • Success Rate: 100.0%
+
+ARTICLES OVERVIEW:
+  • Total Articles Found: 6
+  • Total Articles Scraped: 6
+  • Total Articles Saved to DB: 6
+  • Total Articles Failed: 0
+  • Total Duplicates Skipped: 0
+
+PERFORMANCE METRICS:
+  • Scraping Success Rate: 100.0%
+  • Database Save Rate: 100.0%
+  • Articles per Hour: 6.0
+  • Total Errors: 0
+
+================================================================================
+PER-DATE BREAKDOWN:
+================================================================================
+2024-05-06 - ✅ SUCCESS
+  Found: 3 | Scraped: 3 | Saved: 3 | Failed: 0 | Duplicates: 0
+2024-05-07 - ✅ SUCCESS
+  Found: 3 | Scraped: 3 | Saved: 3 | Failed: 0 | Duplicates: 0
+================================================================================
+
