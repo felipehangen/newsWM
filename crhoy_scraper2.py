@@ -19,14 +19,9 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-def get_page_source(url, headless=True):
+def get_page_source(url):
     opts = Options()
-    if headless:
-        opts.add_argument("--headless=new")  # truly headless on Chrome ≥109
-    opts.add_argument("--disable-gpu")
-    opts.add_argument("--no-sandbox")
-    opts.add_argument("--log-level=3")
-
+    opts.headless = True
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=opts)
     driver.get(url)
@@ -68,12 +63,16 @@ def parse_article(html, url):
     email_span = soup.find("span", attrs={"ng-show": "displayMail"})
     data["author_email"] = email_span.get_text(strip=True) if email_span else None
 
-    # Published date
+    # Published date (UTC)
     date_tag = soup.find("span", class_="fecha-nota")
-    data["published_date"] = date_tag.get_text(strip=True) if date_tag else None
+    if date_tag:
+        # parse and convert to ISO UTC
+        dt = dateparser.parse(date_tag.get_text(strip=True))
+        data["published_date"] = dt.astimezone(dateparser.tz.UTC).isoformat()
+    else:
+        data["published_date"] = None
 
     # Category
-    #cat_tag = soup.find("h3", class_="breadcrumbs text-uppercase color-deportes")
     cat_tag = soup.find("div", class_="categoria-desktop")
     data["category"] = cat_tag.get_text(strip=True) if cat_tag else None
 
@@ -81,12 +80,10 @@ def parse_article(html, url):
     tags = []
     tag_div = soup.find("div", class_="etiquetas")
     if tag_div:
-        # look for <a> within
         links = tag_div.find_all("a")
         if links:
             tags = [a.get_text(strip=True) for a in links]
         else:
-            # fallback to comma-separated text
             raw = tag_div.get_text(separator=",", strip=True)
             tags = [t.strip() for t in raw.split(",") if t.strip()]
     data["tags"] = tags
